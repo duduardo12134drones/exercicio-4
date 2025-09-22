@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jokenpo - Jogo de Pedra, Papel, Tesoura</title>
+</head>
+<body>
+    <h1>Jokenpo - Pedra, Papel ou Tesoura</h1>
+
+    <script>
+        var pontos = 0;
+        var opcoes = ["pedra", "papel", "tesoura"];
+        alert("Bem-vindo ao Jokenpo! Você ganha 1 ponto a cada vitória. O jogo termina quando a máquina vencer.");
+
+        while (true) {
+            var jogador = prompt("Escolha: pedra, papel ou tesoura").toLowerCase();
+            if (!opcoes.includes(jogador)) {
+                alert("Escolha inválida! Tente novamente.");
+                continue;
+            }
+
+            var maquina = opcoes[Math.floor(Math.random() * 3)];
+            alert("Máquina escolheu: " + maquina);
+
+            if (jogador === maquina) {
+                alert("Empate! Ninguém pontua.");
+            } else if (
+                (jogador === "pedra" && maquina === "tesoura") ||
+                (jogador === "papel" && maquina === "pedra") ||
+                (jogador === "tesoura" && maquina === "papel")
+            ) {
+                pontos++;
+                alert("Você venceu essa rodada! Pontos: " + pontos);
+            } else {
+                alert("A máquina venceu! Fim de jogo. Você fez " + pontos + " ponto(s).");
+                break;
+            }
+        }
+    </script>
+</body>
+</html>
+
