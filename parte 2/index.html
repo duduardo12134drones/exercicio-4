@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estação do Ano</title>
+</head>
+<body>
+    <h1>Verificação da Estação do Ano</h1>
+
+    <script>
+        var mes = prompt("Digite o número do mês (1 a 12):");
+        mes = parseInt(mes);
+        var estacao;
+        if (mes == 12 || mes == 1 || mes == 2) {
+            estacao = "Verão";
+        } else if (mes >= 3 && mes <= 5) {
+            estacao = "Outono";
+        } else if (mes >= 6 && mes <= 8) {
+            estacao = "Inverno";
+        } else if (mes >= 9 && mes <= 11) {
+            estacao = "Primavera";
+        } else {
+            estacao = "Mês inválido";
+        }
+        alert("O mês informado corresponde à estação: " + estacao + ".");
+    </script>
+</body>
+</html>
